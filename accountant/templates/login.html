@@ -47,16 +47,11 @@
 <body>    
     <center> <h1> {{ category.name }} </h1> </center>
     <center> <h1> {{ result }} </h1> </center>   
-    <form>  
+    <form method="post">
+        {% csrf_token %}
         <div class="container">   
-            <label>Username : </label>   
-            <input type="text" placeholder="Enter Username" name="username" required>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" name="password" required>  
-            <button type="submit">Login</button>   
-            <input type="checkbox" checked="checked"> Remember me   
-            <button type="button" class="cancelbtn"> Cancel</button>   
-            Forgot <a href="#"> password? </a>   
+            {{ form.as_p }}
+            <input style="background-color: green;" type="submit" value="Сохранить">
         </div>   
     </form>     
 </body>     
