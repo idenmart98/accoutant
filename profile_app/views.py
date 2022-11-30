@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Category, Profile
-from .forms import ProfileForm
+from .models import User
+from .forms import UserForm
 
 
 def index_view(request):
-    form = ProfileForm(request.POST or None) 
+    form = UserForm(request.POST or None) 
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -14,7 +14,3 @@ def index_view(request):
         'login.html', 
         {"form":form}
         )
-
-def index_view2(request):
-    return HttpResponse(3+3)
-

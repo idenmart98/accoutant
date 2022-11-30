@@ -1,16 +1,15 @@
 from django import forms
-from .models import Profile
+from .models import User
 
-
-class ProfileForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     password=forms.CharField(widget=forms.PasswordInput())
     confirm_password=forms.CharField(widget=forms.PasswordInput())
     class Meta:
-        model = Profile
-        fields=('login', 'password')   
+        model = User
+        fields=('username', 'password')   
         
     def clean(self):
-        cleaned_data = super(ProfileForm, self).clean()
+        cleaned_data = super(UserForm, self).clean()
         password = cleaned_data.get("password")
         confirm_password = cleaned_data.get("confirm_password")
 
