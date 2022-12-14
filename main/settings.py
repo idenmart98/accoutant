@@ -112,6 +112,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'ekulubayev@mail.ru'
+EMAIL_HOST_PASSWORD = '2KKajxQq2tcB0UWe1yVQ'
+#send_mail(subject='A cool subject',message='A stunning message',from_email=from_email=settings.EMAIL_HOST_USER,recipient_list=[prof.email])
+
+SITE_NAME = "http://localhost:8000/"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

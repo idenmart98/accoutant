@@ -4,9 +4,13 @@ from django.db import models
 class Profile(models.Model):
     login = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
+    email = models.EmailField()
+    verified = models.BooleanField(default=False)
+    uid = models.CharField(max_length=50)
     
     def __str__(self):
         return self.login
+    
     
 class Category(models.Model):
     name = models.CharField(max_length=10)
